@@ -1,3 +1,4 @@
+# renovate: datasource=git-tags extractVersion=^release-(?<version>.*)$ depName=git://github.com/nginx/nginx.git
 ARG NGINX_VERSION=1.23.1
 ARG NGINX_RTMP_VERSION=1.2.2
 ARG FFMPEG_VERSION=5.1
