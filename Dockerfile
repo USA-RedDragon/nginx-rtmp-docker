@@ -1,7 +1,9 @@
-# renovate: datasource=git-tags extractVersion=^release-(?<version>.*)$ depName=git://github.com/nginx/nginx.git
+# renovate: datasource=git-tags extractVersion=^release-(?<version>.*)$ depName=https://github.com/nginx/nginx.git
 ARG NGINX_VERSION=1.23.1
+# renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://github.com/arut/nginx-rtmp-module.git
 ARG NGINX_RTMP_VERSION=1.2.2
-ARG FFMPEG_VERSION=5.1
+# renovate: datasource=git-tags extractVersion=^n(?<version>.*)$ depName=git://git.ffmpeg.org/ffmpeg.git
+ARG FFMPEG_VERSION=5.1.3
 
 ##############################
 # Build the NGINX-build image.
@@ -87,13 +89,13 @@ RUN apk add --no-cache \
   x265-dev \
   yasm
 
-RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories
+RUN echo https://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories
 RUN apk add --no-cache fdk-aac-dev
 
 WORKDIR /tmp
 
 # Get FFmpeg source.
-RUN wget http://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.gz && \
+RUN wget https://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.gz && \
   tar zxf ffmpeg-${FFMPEG_VERSION}.tar.gz && \
   rm ffmpeg-${FFMPEG_VERSION}.tar.gz
 
