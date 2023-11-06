@@ -140,7 +140,7 @@ LABEL MAINTAINER Alfred Gutierrez <alf.g.jr@gmail.com>
 # Set default ports.
 ENV HTTP_PORT 80
 ENV HTTPS_PORT 443
-ENV RTMP_PORT 1935
+ENV RTMP_LISTEN_PORT 1935
 
 RUN apk add --no-cache \
   ca-certificates \
