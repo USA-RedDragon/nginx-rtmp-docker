@@ -3,7 +3,7 @@ ARG NGINX_VERSION=1.25.3
 # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://github.com/arut/nginx-rtmp-module.git
 ARG NGINX_RTMP_VERSION=1.2.2
 # renovate: datasource=git-tags extractVersion=^n(?<version>.*)$ depName=git://git.ffmpeg.org/ffmpeg.git
-ARG FFMPEG_VERSION=5.1.4
+ARG FFMPEG_VERSION=6.0.1
 
 ##############################
 # Build the NGINX-build image.
